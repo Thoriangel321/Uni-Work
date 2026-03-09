@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace LinesClass
@@ -49,35 +50,35 @@ namespace LinesClass
             this.x2d -= x2;
             this.x2 = this.x2d;
         }
-        public void Addition() 
+
+        public static Lines operator+ (Lines line, Lines line2)
         {
-            Console.WriteLine("Dummy Addition for overloading");
+            Lines retLine = new Lines();
+            retLine.x1d = line.x1 + line2.x1;
+            retLine.x1 = retLine.x1d;
+            retLine.y1d = line.y1 + line2.y1;
+            retLine.y1 = retLine.y1d;
+            retLine.x2d = line.x2 + line2.x2;
+            retLine.x2 = retLine.x2d;
+            retLine.y2d = line.y2 + line2.y2;
+            retLine.y2 = retLine.y2d;
+
+            return retLine;
         }
-        public void Addition(Lines line, Lines line2)
+
+        public static Lines operator-(Lines line, Lines line2)
         {
-            x1d = line.x1 + line2.x1;
-            x1 = x1d;
-            y1d = line.y1 + line2.y1;
-            y1 = y1d;
-            x2d = line.x2 + line2.x2;
-            x2 = x2d;
-            y2d = line.y2 + line2.y2;
-            y2 = y2d;
-        }
-        public void Subtraction() 
-        {
-            Console.WriteLine("Dummy Subtraction for overloading");
-        }
-        public void Subtraction(Lines line, Lines line2)
-        {
-            x1d = line.x1 - line2.x2;
-            x1 = x1d;
-            y1d = line.y1 - line2.y2;
-            y1 = y1d;
-            x2d = line.x2 - line2.x2;
-            x2 = x2d;
-            y2d = line.y2 - line2.y2;
-            y2 = y2d;
+            Lines retLine = new Lines();
+            retLine.x1d = line.x1 - line2.x1;
+            retLine.x1 = retLine.x1d;
+            retLine.y1d = line.y1 - line2.y1;
+            retLine.y1 = retLine.y1d;
+            retLine.x2d = line.x2 - line2.x2;
+            retLine.x2 = retLine.x2d;
+            retLine.y2d = line.y2 - line2.y2;
+            retLine.y2 = retLine.y2d;
+
+            return retLine;
         }
     }
 }

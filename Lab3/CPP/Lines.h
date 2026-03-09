@@ -42,9 +42,7 @@ class Lines
 	double Length(Lines line);
 	void MoveXL(double x1, double x2);
 
-	void Add(Lines line);
-	void Add(Lines line, Lines line2);
+	Lines operator+(Lines line);
 
-	void Subtraction(Lines line);
-	void Subtraction(Lines line, Lines line2);
+	Lines operator-(Lines line);
 };

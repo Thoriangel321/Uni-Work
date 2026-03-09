@@ -19,39 +19,36 @@ double Lines::Length(Lines line)
 	return (sqrt(pow(line.x2 - line.x1, 2) + pow(line.y2 - line.y1, 2)));
 }
 
-void Lines::Add(Lines line) 
-{
-	std::cerr << "Dummy Method";
-}
 
-void Lines::Add(Lines line, Lines line2) 
+Lines Lines::operator+(Lines line) 
 {
 
-	x1d = line.x1 + line2.x1;
+	x1d = x1 + line.x1;
 	this->x1 = x1d;
-	y1d = line.y1 + line2.y1;
+	y1d = y1 + line.y1;
 	this->y1 = y1d;
-	x2d = line.x2 + line2.x2;
+	x2d = x2 + line.x2;
 	this->x2 = x2d;
-	y2d = line.y2 + line2.y2;
+	y2d = y2 + line.y2;
 	this->y2 = y2d;
 
+	Lines retLine(x1, y1, x2, y2);
+	return retLine;
 }
 
-void Lines::Subtraction(Lines line) 
-{
-	std::cerr << "Very Dummy Method";
-}
 
-void Lines::Subtraction(Lines line, Lines line2) 
+Lines Lines::operator-(Lines line) 
 {
-	x1d = line.x1 - line2.x1;
+	x1d = x1 - line.x1;
 	this->x1 = x1d;
-	y1d = line.y1 - line2.y1;
+	y1d = y1 - line.y1;
 	this->y1 = y1d;
-	x2d = line.x2 - line2.x2;
+	x2d = x2 - line.x2;
 	this->x2 = x2d;
-	y2d = line.y2 - line2.y2;
+	y2d = y2 - line.y2;
 	this->y2 = y2d;
+	
+	Lines retLine(x1, y1, x2, y2);
 
+	return retLine;
 }
